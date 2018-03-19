@@ -1,7 +1,7 @@
 $(document).ready(function (){
     $("body").on("click", "#text-enter-button", function (event) {
         var burgerData = {
-            name: $("#burger-text").val().trim()
+            name: $("#enter_text").val().trim()
         };
         $.post("/", burgerData).done(function (data) {
             getCall();
@@ -13,7 +13,7 @@ $(document).ready(function (){
             var HTML = $.parseHTML(data, document, true);
             var bodyHTML = HTML[15].innerHTML
             console.log(HTML);
-            $(".container-fluid").html(bodyHTML);
+            $(".main-container").html(bodyHTML);
         });
     }
 });
